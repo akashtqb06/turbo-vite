@@ -1,0 +1,6 @@
+@import "@repo/ui/styles.css";
+
+@source "./**/*.{ts,tsx}";
+
+@source "../../../packages/auth/**/*.{ts,tsx}";
+@source "../../../packages/desk/**/*.{ts,tsx}";
