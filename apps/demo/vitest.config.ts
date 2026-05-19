@@ -47,6 +47,17 @@ export default mergeConfig(
       ],
       coverage: {
         reportsDirectory: "./apps/demo/coverage",
+        // Show per-file coverage table in terminal output
+        reporter: ["text", "html", "lcov", "text-summary"],
+        // Thresholds — reported in the text output so developers see trends.
+        // These do NOT block CI (the post-commit hook uses || true).
+        // Bump these up as coverage improves.
+        thresholds: {
+          lines:      60,
+          functions:  60,
+          branches:   50,
+          statements: 60,
+        },
         include: [
           "apps/demo/src/**/*.{ts,tsx}",
           "packages/utils/src/**/*.ts",

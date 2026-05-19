@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+# post-commit: Runs tests + coverage AFTER the commit is recorded.
+#
+# This hook is informational only — it CANNOT block a commit.
+# Failures are printed to the terminal so developers are aware,
+# but the commit always succeeds regardless of test results.
+#
+# Coverage report is written to apps/demo/coverage/ and printed
+# to the terminal in text format.
+
+echo ""
+echo "🧪 Running test suite + coverage (post-commit, non-blocking)..."
+echo "────────────────────────────────────────────────────────────────"
+
+# Run vitest with coverage. || true ensures the hook never exits non-zero.
+npx vitest run \
+  --config apps/demo/vitest.config.ts \
+  --coverage \
+  --reporter=verbose \
+  2>&1 || true
+
+echo ""
+echo "📊 Coverage report written to apps/demo/coverage/"
+echo "   Open apps/demo/coverage/index.html to view full report."
+echo "────────────────────────────────────────────────────────────────"
+echo ""
