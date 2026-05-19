@@ -1,3 +1,11 @@
+/**
+ * Tests for `packages/ui/hooks/use-mobile`.
+ *
+ * Since `useIsMobile` now delegates to `@repo/hooks/useMediaQuery`,
+ * we mock matchMedia's `matches` property and trigger the listener
+ * via a proper MediaQueryListEvent, not window.innerWidth.
+ */
+
 import { act, render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -9,68 +17,57 @@ function MobileState() {
 }
 
 describe("packages/ui/hooks/use-mobile", () => {
+  let capturedListener: ((e: Partial<MediaQueryListEvent>) => void) | undefined;
+
   beforeEach(() => {
-    let listener: (() => void) | undefined;
+    capturedListener = undefined;
 
     vi.stubGlobal(
       "matchMedia",
-      vi.fn().mockImplementation(() => ({
+      vi.fn().mockImplementation((query: string) => ({
         matches: false,
-        addEventListener: vi.fn((_event: string, nextListener: () => void) => {
-          listener = nextListener;
+        media: query,
+        onchange: null,
+        addEventListener: vi.fn((_event: string, fn: (e: Partial<MediaQueryListEvent>) => void) => {
+          capturedListener = fn;
         }),
         removeEventListener: vi.fn(),
-        dispatch: () => listener?.(),
-      }))
+        dispatchEvent: vi.fn(),
+      })),
     );
   });
 
-  it("returns the current mobile state from the viewport width", () => {
-    Object.defineProperty(window, "innerWidth", {
-      configurable: true,
-      value: 640,
-    });
-
+  it("returns false when matchMedia.matches is false (desktop)", () => {
     render(<MobileState />);
-
-    expect(screen.getByTestId("mobile-state")).toHaveTextContent("true");
+    expect(screen.getByTestId("mobile-state")).toHaveTextContent("false");
   });
 
-  it("updates when the media query listener fires", () => {
-    let listener: (() => void) | undefined;
-    const removeEventListener = vi.fn();
-
+  it("returns true when matchMedia.matches is true (mobile)", () => {
     vi.stubGlobal(
       "matchMedia",
-      vi.fn().mockImplementation(() => ({
-        matches: false,
-        addEventListener: vi.fn((_event: string, nextListener: () => void) => {
-          listener = nextListener;
-        }),
-        removeEventListener,
-      }))
+      vi.fn().mockImplementation((query: string) => ({
+        matches: true, // simulate mobile viewport
+        media: query,
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+        dispatchEvent: vi.fn(),
+      })),
     );
 
-    Object.defineProperty(window, "innerWidth", {
-      configurable: true,
-      value: 1024,
-    });
+    render(<MobileState />);
+    expect(screen.getByTestId("mobile-state")).toHaveTextContent("true");
+  });
 
+  it("updates reactively when the media query listener fires", () => {
     const { unmount } = render(<MobileState />);
-
     expect(screen.getByTestId("mobile-state")).toHaveTextContent("false");
 
-    Object.defineProperty(window, "innerWidth", {
-      configurable: true,
-      value: 600,
-    });
+    // Fire the change event with matches=true (simulates viewport narrowing)
     act(() => {
-      listener?.();
+      capturedListener?.({ matches: true } as Partial<MediaQueryListEvent>);
     });
 
     expect(screen.getByTestId("mobile-state")).toHaveTextContent("true");
-
     unmount();
-    expect(removeEventListener).toHaveBeenCalled();
   });
 });

@@ -9,6 +9,11 @@
     "./store": "./src/store.ts",
     "./slices/theme": "./src/slices/theme.slice.ts",
     "./slices/preferences": "./src/slices/preferences.slice.ts",
+    "./slices/auth": "./src/slices/auth.slice.ts",
+    "./slices/notifications": "./src/slices/notifications.slice.ts",
+    "./slices/modal": "./src/slices/modal.slice.ts",
+    "./slices/ui": "./src/slices/ui.slice.ts",
+    "./factories/createCrudSlice": "./src/factories/createCrudSlice.ts",
     "./api": "./src/api/index.ts",
     "./api/baseApi": "./src/api/baseApi.ts",
     "./api/themeApi": "./src/api/themeApi.ts"
@@ -17,6 +22,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
     "@repo/api-client": "*",
+    "@repo/utils": "*",
     "react-redux": "^9.2.0"
   },
   "peerDependencies": {
@@ -28,3 +34,4 @@
     "typescript": "5.9.2"
   }
 }
+

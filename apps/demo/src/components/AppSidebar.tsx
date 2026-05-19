@@ -1,4 +1,3 @@
-import * as React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Menu } from "lucide-react";
 import { Button } from "@repo/ui/components/ui/button";

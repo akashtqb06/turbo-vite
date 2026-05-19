@@ -1,0 +1,35 @@
+{
+  "name": "@repo/hooks",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./useDebounce": "./src/useDebounce.ts",
+    "./usePrevious": "./src/usePrevious.ts",
+    "./useLocalStorage": "./src/useLocalStorage.ts",
+    "./useSessionStorage": "./src/useSessionStorage.ts",
+    "./useMediaQuery": "./src/useMediaQuery.ts",
+    "./useOutsideClick": "./src/useOutsideClick.ts",
+    "./useCopyToClipboard": "./src/useCopyToClipboard.ts",
+    "./useToggle": "./src/useToggle.ts",
+    "./useCounter": "./src/useCounter.ts",
+    "./useInterval": "./src/useInterval.ts",
+    "./useTimeout": "./src/useTimeout.ts",
+    "./useWindowSize": "./src/useWindowSize.ts",
+    "./useEventListener": "./src/useEventListener.ts"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test":     "vitest run",
+    "coverage": "vitest run --coverage"
+  },
+  "peerDependencies": { "react": "^19" },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "@repo/vitest-config": "*",
+    "@types/react": "^19.1.0",
+    "typescript": "5.9.2"
+  }
+}

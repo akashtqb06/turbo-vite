@@ -1,4 +1,4 @@
-import { getApiClient } from "../http/axios.js";
+import { getApiClient } from "@repo/api-client/http";
 import themesData from "../data/themes.json" with { type: "json" };
 
 // ─── Types ───────────────────────────────────────────────────────────────────

@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { getThemes } from "@repo/api-client/services/theme";
-import type { Theme } from "@repo/api-client/services/theme";
+import { getThemes } from "@repo/utils/services/theme";
+import type { Theme } from "@repo/utils/services/theme";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 

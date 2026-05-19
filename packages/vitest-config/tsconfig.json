@@ -1,0 +1,11 @@
+{
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true,
+    "rootDir": "."
+  },
+  "include": ["*.js"],
+  "exclude": ["node_modules"]
+}

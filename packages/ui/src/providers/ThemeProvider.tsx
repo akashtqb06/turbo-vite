@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchThemes, selectActiveTheme, selectThemeMode } from "@repo/store/slices/theme";
 import type { AppDispatch } from "@repo/store/store";
 import type { ThemeMode } from "@repo/store/slices/theme";
-import type { Theme } from "@repo/api-client/services/theme";
+import type { Theme } from "@repo/utils/services/theme";
 
 // ─── Legacy context shim ──────────────────────────────────────────────────────
 // Kept for backward compatibility — prefer useTheme() from @repo/store instead.

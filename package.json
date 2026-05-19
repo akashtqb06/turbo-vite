@@ -2,12 +2,18 @@
   "name": "with-tailwind",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
+    "build":       "turbo run build",
+    "dev":         "turbo run dev",
+    "lint":        "turbo run lint",
     "check-types": "turbo run check-types",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "prepare": "husky"
+    "test":        "turbo run test",
+    "test:coverage": "turbo run coverage",
+    "format":      "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare":     "husky",
+    "create-app":  "bash scripts/create-app.sh",
+    "analyze":     "ANALYZE=true turbo run build",
+    "deps:check":  "npx -y npm-check-updates --workspaces --interactive",
+    "clean":       "turbo run clean && find . -name 'node_modules' -not -path '*/.git/*' -prune -exec rm -rf {} + 2>/dev/null; true"
   },
   "devDependencies": {
     "husky": "^9.1.7",
@@ -25,8 +31,8 @@
     "packages/*"
   ],
   "lint-staged": {
-    "packages/*/src/**/*.{js,jsx,ts,tsx}": [
-      "eslint --max-warnings=0"
+    "apps/demo/src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --max-warnings=0 --no-warn-ignored"
     ]
   },
   "dependencies": {

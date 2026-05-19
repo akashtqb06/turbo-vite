@@ -8,6 +8,9 @@ import {
   Info,
   Sliders,
   Table2,
+  Package,
+  Database,
+  Languages,
 } from "lucide-react";
 import type { NavSection } from "./navConfig";
 
@@ -15,7 +18,7 @@ export const NAV_SECTIONS: NavSection[] = [
   {
     group: "Getting Started",
     items: [
-      { label: "Overview",         href: "/",         icon: LayoutGrid },
+      { label: "Overview", href: "/", icon: LayoutGrid },
     ],
   },
   {
@@ -29,6 +32,14 @@ export const NAV_SECTIONS: NavSection[] = [
       { label: "Tabs",             href: "/tabs",     icon: Sliders },
       { label: "Table",            href: "/table",    icon: Table2 },
       { label: "Charts",           href: "/charts",   icon: BarChart2 },
+    ],
+  },
+  {
+    group: "Packages",
+    items: [
+      { label: "Hooks & Utils",    href: "/packages", icon: Package },
+      { label: "State (Redux)",    href: "/state",    icon: Database },
+      { label: "i18n",             href: "/i18n",     icon: Languages },
     ],
   },
 ];

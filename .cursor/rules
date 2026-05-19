@@ -1,0 +1,7 @@
+# See AGENTS.md at the repo root for the full AI coding policy.
+#
+# This file is the Cursor IDE mirror of AGENTS.md. When both files exist,
+# Cursor loads this one and Claude/Gemini CLI loads AGENTS.md.
+# Keep them in sync — AGENTS.md is the source of truth.
+
+@../AGENTS.md

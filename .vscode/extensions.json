@@ -1,0 +1,31 @@
+{
+  // Recommended extensions for turbo-vite monorepo development.
+  // VS Code will prompt you to install these when you open the workspace.
+  "recommendations": [
+    // ── Code Quality ──────────────────────────────────────────────────────────
+    "esbenp.prettier-vscode",         // Prettier — auto-format on save
+    "dbaeumer.vscode-eslint",         // ESLint — inline error highlighting
+    "usernamehw.errorlens",           // Error Lens — inline error messages
+
+    // ── TypeScript ────────────────────────────────────────────────────────────
+    "ms-vscode.vscode-typescript-next", // Latest TypeScript language server
+
+    // ── Tailwind CSS ──────────────────────────────────────────────────────────
+    "bradlc.vscode-tailwindcss",      // Tailwind IntelliSense — class autocomplete
+
+    // ── Git ───────────────────────────────────────────────────────────────────
+    "eamodio.gitlens",                // GitLens — line-level blame, history
+
+    // ── Testing ───────────────────────────────────────────────────────────────
+    "vitest.explorer",                // Vitest Explorer — run tests from sidebar
+    "ms-playwright.playwright",       // Playwright — E2E test runner
+
+    // ── Monorepo DX ───────────────────────────────────────────────────────────
+    "pflannery.vscode-versionlens",   // Version Lens — see outdated package.json deps
+    "mikestead.dotenv",               // .env file syntax highlighting
+
+    // ── Productivity ──────────────────────────────────────────────────────────
+    "christian-kohler.path-intellisense", // Path autocomplete
+    "streetsidesoftware.code-spell-checker" // Catch typos in comments/strings
+  ]
+}

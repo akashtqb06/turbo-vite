@@ -1,5 +1,5 @@
 import { baseApi } from "./baseApi.js";
-import type { Theme } from "@repo/api-client/services/theme";
+import type { Theme } from "@repo/utils/services/theme";
 
 // ─── Theme API endpoints ──────────────────────────────────────────────────────
 

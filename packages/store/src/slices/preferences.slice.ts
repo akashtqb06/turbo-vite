@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { getStoredLanguageCode } from "@repo/api-client/preferences";
+import { getStoredLanguageCode } from "@repo/utils/preferences";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 

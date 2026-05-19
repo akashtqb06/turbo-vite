@@ -1,0 +1,4 @@
+{
+  "extends": "@repo/vitest-config/tsconfig.test",
+  "include": ["src/__tests__"]
+}

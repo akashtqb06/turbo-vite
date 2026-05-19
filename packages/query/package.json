@@ -1,0 +1,29 @@
+{
+  "name": "@repo/query",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./client": "./src/client.ts",
+    "./provider": "./src/provider.tsx",
+    "./queryKeys": "./src/queryKeys.ts",
+    "./hooks/usePaginatedQuery": "./src/hooks/usePaginatedQuery.ts",
+    "./hooks/useInfiniteList": "./src/hooks/useInfiniteList.ts"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@repo/api-client": "*",
+    "@tanstack/react-query": "^5.80.5",
+    "@tanstack/react-query-devtools": "^5.80.5"
+  },
+  "peerDependencies": {
+    "react": "^19"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "@types/react": "^19.1.0",
+    "typescript": "5.9.2"
+  }
+}

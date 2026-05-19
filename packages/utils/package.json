@@ -1,22 +1,35 @@
 {
-  "name": "@repo/api-client",
+  "name": "@repo/utils",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
-    "./http": "./src/http/axios.ts",
+    "./string": "./src/string.ts",
+    "./object": "./src/object.ts",
+    "./array": "./src/array.ts",
+    "./date": "./src/date.ts",
+    "./guards": "./src/guards.ts",
+    "./async": "./src/async.ts",
+    "./url": "./src/url.ts",
+    "./cn": "./src/cn.ts",
     "./preferences": "./src/preferences/index.ts",
     "./services/theme": "./src/services/theme.service.ts",
     "./data/themes": "./src/data/themes.json"
   },
   "license": "MIT",
+  "scripts": {
+    "test":     "vitest run",
+    "coverage": "vitest run --coverage"
+  },
   "dependencies": {
-    "axios": "^1.7.9",
-    "axios-mock-adapter": "^2.1.0"
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
     "@repo/typescript-config": "*",
+    "@repo/vitest-config": "*",
     "typescript": "5.9.2"
   }
 }
