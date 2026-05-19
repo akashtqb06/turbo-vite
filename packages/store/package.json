@@ -1,0 +1,30 @@
+{
+  "name": "@repo/store",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./hooks": "./src/hooks.ts",
+    "./store": "./src/store.ts",
+    "./slices/theme": "./src/slices/theme.slice.ts",
+    "./slices/preferences": "./src/slices/preferences.slice.ts",
+    "./api": "./src/api/index.ts",
+    "./api/baseApi": "./src/api/baseApi.ts",
+    "./api/themeApi": "./src/api/themeApi.ts"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.5.1",
+    "@repo/api-client": "*",
+    "react-redux": "^9.2.0"
+  },
+  "peerDependencies": {
+    "react": "^19"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "*",
+    "@types/react": "^19.1.0",
+    "typescript": "5.9.2"
+  }
+}

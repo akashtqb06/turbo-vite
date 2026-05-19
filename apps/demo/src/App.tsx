@@ -1,24 +1,14 @@
-import { Route, Routes } from "react-router-dom";
-import { GlobalLoadingIndicator } from "./components/globalLoadingIndicator";
+import { Route, Routes } from 'react-router-dom';
+import { ThemePage } from './pages/ThemePage';
 
 function App() {
-
-
-  return (
-    <>
-      <GlobalLoadingIndicator />
-      <Routes>
-        
-        <Route
-          path="/"
-          element={
-            <div>Demo</div>
-          }
-        />
-        
-      </Routes>
-    </>
-  );
+    return (
+        <>
+            <Routes>
+                <Route path="/" element={<ThemePage />} />
+            </Routes>
+        </>
+    );
 }
 
 export default App;

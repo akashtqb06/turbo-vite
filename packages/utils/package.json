@@ -1,0 +1,22 @@
+{
+  "name": "@repo/api-client",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./http": "./src/http/axios.ts",
+    "./preferences": "./src/preferences/index.ts",
+    "./services/theme": "./src/services/theme.service.ts",
+    "./data/themes": "./src/data/themes.json"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "axios-mock-adapter": "^2.1.0"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "*",
+    "typescript": "5.9.2"
+  }
+}

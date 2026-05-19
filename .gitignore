@@ -34,3 +34,7 @@ yarn-error.log*
 
 # ui
 dist/
+
+# apps are separate repos cloned into this directory during development
+# they are NOT tracked by this repo's git history
+apps/
